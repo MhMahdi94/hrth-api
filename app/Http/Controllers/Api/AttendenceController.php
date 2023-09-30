@@ -35,6 +35,10 @@ class AttendenceController extends Controller
     public function store(StoreAttendenceRequest $request)
     {
         //
+        $data=$request->validated();
+        $attendece=Attendence::create($data);
+        
+        return response(new AttendenceResource($attendece),201);
     }
 
     /**
@@ -59,6 +63,15 @@ class AttendenceController extends Controller
     public function update(UpdateAttendenceRequest $request, Attendence $attendence)
     {
         //
+        try {
+            $data=$request->validated();
+            $attendence->update($data);
+            return new AttendenceResource($attendence);
+    
+            //code...
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**

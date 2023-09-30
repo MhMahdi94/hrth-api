@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attendences', function (Blueprint $table) {
+        Schema::create('slot_leaves', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('company_id');
-            $table->string('check_in');
-            $table->string('check_out');
+            $table->string('leave_month');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendences');
+        Schema::dropIfExists('slot_leaves');
     }
 };

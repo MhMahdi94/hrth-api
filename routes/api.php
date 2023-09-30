@@ -8,12 +8,13 @@ use App\Http\Controllers\Api\DepartmentController;
 use App\Http\Controllers\Api\EmployeeController;
 
 use App\Http\Controllers\Api\GetUserController;
-
+use App\Http\Controllers\Api\LeaveSlotsController;
 use App\Http\Controllers\Api\NewRequestController;
 use App\Http\Controllers\Api\PackageController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\SalaryController;
 use App\Http\Controllers\Api\UserController;
+use App\Models\LeaveSlot;
 use App\Models\NewRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource('/packages',PackageController::class);
     Route::apiResource('/salaries',SalaryController::class);
     Route::apiResource('/attendence',AttendenceController::class);
+    Route::apiResource('/leaveSlots',LeaveSlotsController::class);
     // Route::put('/new-request/{id}',[NewRequestController::class,'update']);
 }) ;
 

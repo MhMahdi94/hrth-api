@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAttendenceRequest extends FormRequest
+class UpdateSlotLeaveRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreAttendenceRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -25,10 +25,6 @@ class StoreAttendenceRequest extends FormRequest
     {
         return [
             //
-            'user_id'=>'required',
-           // 'company_id'=>'required',
-            'check_in'=>'required',
-            'check_out'=>'required',
         ];
     }
 }

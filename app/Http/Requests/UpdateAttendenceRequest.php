@@ -13,7 +13,7 @@ class UpdateAttendenceRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,10 @@ class UpdateAttendenceRequest extends FormRequest
     {
         return [
             //
+            'user_id'=>'required',
+            // 'company_id'=>'required',
+             'check_in'=>'',
+             'check_out'=>'required',
         ];
     }
 }

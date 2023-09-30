@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use App\Models\Employee;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class SlotLeaveResource extends JsonResource
 {
     public static $wrap=false;
     /**
@@ -16,17 +16,10 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-        $employee=Employee::where('user_id',$this->id)->get();
         return [
             'id'=>$this->id,
-            'uid'=>$this->uid,
-            'name'=>$this->name,
-            'email'=>$this->email,
-            'employee'=>'nnn',//$employee,
-            'comapnyName'=>$this->comapnyName,
-            'role'=>$this->role,
-            'status'=>$this->status,
-            'mobileNo'=>$this->mobileNo,
+            'user_id'=>$this->user_id,
+            'leave_month'=>$this->leave_month,
             'created_at'=>$this->created_at->format('Y-m-d H:i:s'),
         ];
     }
